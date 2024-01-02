@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Page.astro";
+import Container from "../components/Container.astro";
+
+const seo = {
+  title: "Social Kids | Fonoudiología a domicilio",
+  description:
+    "Terapias a domicilio en Santiago para niños con problemas de lenguaje, habla y voz. Ofrecemos tratamientos especializados para niños con patologías del neurodesarrollo como autismo y síndrome de Down, así como apoyo en lectoescritura. Nuestro objetivo es mejorar la calidad de vida de los niños y ayudarles a alcanzar su máximo potencial.",
+};
+---
+
+<style>
+  .hero__article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+</style>
+
+<Layout seo={seo}>
+  <Container narrow>
+    <article class="hero__article">
+      <h1 class="fade-in">Pronto</h1>
+      <p class="fade-in">
+        Fonoudiología a domicilio para niños con problemas de lenguaje, habla y
+        voz.
+      </p>
+    </article>
+  </Container>
+</Layout>
