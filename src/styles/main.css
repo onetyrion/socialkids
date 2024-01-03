@@ -74,6 +74,7 @@ h1 {
   line-height: 1.2;
   font-stretch: 125%;
   font-variation-settings: 'slnt' -4, 'opsz' 25;
+  -webkit-text-stroke: 2px red;
 }
 
 h2 {
