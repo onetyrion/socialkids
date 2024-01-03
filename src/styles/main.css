@@ -52,7 +52,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   /* background: var(--theme-background) url('/assets/images/bg.png') no-repeat; */
-  background-color: "#c78ae3";
+  background-color: #c78ae3;
   background-size: cover;
   background-position: center;
 }
