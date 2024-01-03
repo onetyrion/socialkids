@@ -25,7 +25,7 @@
   --step-4: clamp(2.59rem, calc(2.01rem + 2.93vw), 5.53rem);
   --step-5: clamp(3.11rem, calc(2.26rem + 4.25vw), 7.37rem);
 
-  --font-family-heading: 'Roboto Flex', sans-serif;
+  --font-family-heading: 'Pacifico', 'Roboto Flex', sans-serif;
   --font-family-body: 'Open Sans', sans-serif;
 
   --body-max-width: 1920px;
@@ -51,10 +51,12 @@ body {
   position: relative;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  /* background: var(--theme-background) url('/assets/images/bg.png') no-repeat; */
-  background-color: pink;
-  background-size: cover;
-  background-position: center;
+
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  background-image:  radial-gradient(#e945f7 1px, transparent 0.5px), radial-gradient(#e945f7 1px, #e492f7 1px);
+  background-size: 20px 20px;
+  background-position: 0 0,10px 10px;
 }
 
 .flow>*+* {
