@@ -1,6 +1,6 @@
 export const settings = {
-  site: 'https://cannonball.littlesticks.dev',
-  name: 'Little Sticks',
-  title: 'Cannonball by Little Sticks | A splash page template',
-  description: 'This is a simple splash page template built with Astro by Little Sticks',
+  site: 'https://socialkids.cl',
+  name: 'lafonosocialkids',
+  title: 'Social Kids | Fonoudiología a domicilio',
+  description: 'Terapias fonoaudiológicas a domicilio en Santiago para niños con trastornos de lenguaje, habla y voz, incluyendo autismo y síndrome de Down.',
 }
