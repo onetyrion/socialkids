@@ -1,4 +1,7 @@
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
 User-agent: *
 Allow: /
 
-Sitemap: https://www.socialkids.cl/sitemap-0.xml
+Sitemap: https://www.socialkids.cl/sitemap-index.xml
