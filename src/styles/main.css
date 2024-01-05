@@ -23,7 +23,7 @@
   --step-2: clamp(1.80rem, calc(1.54rem + 1.31vw), 3.11rem);
   --step-3: clamp(2.16rem, calc(1.76rem + 1.98vw), 4.14rem);
   --step-4: clamp(2.59rem, calc(2.01rem + 2.93vw), 5.53rem);
-  --step-5: clamp(3.11rem, calc(2.26rem + 4.25vw), 7.37rem);
+  --step-5: clamp(2.11rem, calc(2.26rem + 4.25vw), 4.37rem);
 
   --font-family-heading: 'Pacifico', 'Roboto Flex', sans-serif;
   --font-family-body: 'Open Sans', sans-serif;
