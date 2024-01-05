@@ -32,7 +32,7 @@ const image = new URL(Astro.props.image || '', Astro.site);
 <link rel="sitemap" href="/sitemap-index.xml">
 
 <!-- Canonical -->
-<link rel="canonical" href={canonicalURL}>
+<link rel="canonical" href={Astro.url.href} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
