@@ -6,7 +6,9 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: settings.site,
-  integrations: [sitemap(), icon({
+  integrations: [sitemap({
+    lastmod: new Date(),
+  }), icon({
     include: {
       // Include only three `mdi` icons in the bundle
       mdi: ['instagram', 'linkedin', 'whatsapp'],
