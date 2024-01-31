@@ -41,8 +41,7 @@ import ByNumber from "./ByNumber.astro";
       </Paragraph>
       <div class="mt-10 w-full flex max-w-md mx-auto lg:mx-0">
         <div class="flex sm:flex-row flex-col gap-5 w-full">
-          <form
-            action="#"
+          <div
             class="py-1 pl-6 w-full pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow
                       border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body focus-within:border-primary"
           >
@@ -67,6 +66,7 @@ import ByNumber from "./ByNumber.astro";
               type="email"
               name=""
               id=""
+              disabled
               placeholder="contacto@socialkids.cl"
               class="w-full py-3 outline-none bg-transparent"
             />
@@ -93,7 +93,7 @@ import ByNumber from "./ByNumber.astro";
                 </span>
               </Button>
             </a>
-          </form>
+          </div>
         </div>
       </div>
     </div>
