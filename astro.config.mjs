@@ -15,7 +15,7 @@ export default defineConfig({
     icon({
       include: {
         // Include only three `mdi` icons in the bundle
-        mdi: ["instagram", "linkedin", "whatsapp"],
+        mdi: ["instagram", "linkedin", "whatsapp", "email"],
         // Include all `uis` icons
         uis: ["*"],
       },

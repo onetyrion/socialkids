@@ -3,6 +3,7 @@ import BtnLink from "../shared/BtnLink.astro";
 import Container from "../shared/Container.astro";
 import Navitem from "../shared/Navitem.astro";
 import { navItems } from "../../data/navItems";
+import { socials } from "../../data/socials";
 ---
 
 <header class="absolute inset-x-0 top-0 z-50 py-6">
@@ -46,7 +47,7 @@ import { navItems } from "../../data/navItems";
         >
           <BtnLink
             text="Contáctame!"
-            href="#cta"
+            href={socials[2].url}
             className="flex justify-center w-full sm:w-max"
             variant="primary"
           />
