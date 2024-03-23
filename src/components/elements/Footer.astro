@@ -1,0 +1,182 @@
+---
+import { Icon } from "astro-icon/components";
+import { socials } from "../../data/socials";
+import { settings } from '../../data/settings';
+import GroupFooterNav from "../blocks/GroupFooterNav.astro";
+import Container from "../shared/Container.astro";
+import FooterNav from "../shared/FooterNav.astro";
+import Paragraph from "../shared/Paragraph.astro";
+const footerNav1 = [
+  {
+    itemText: "Marketing",
+    itemLink: "#",
+  },
+  {
+    itemText: "Analylitics",
+    itemLink: "#",
+  },
+  {
+    itemText: "Commerce",
+    itemLink: "#",
+  },
+  {
+    itemText: "Insights",
+    itemLink: "#",
+  },
+];
+
+const footerSupport = [
+  {
+    itemText: "Pricing",
+    itemLink: "#",
+  },
+  {
+    itemText: "Guides",
+    itemLink: "#",
+  },
+  {
+    itemText: "FAQ",
+    itemLink: "#",
+  },
+  {
+    itemText: "Contact",
+    itemLink: "#",
+  },
+];
+
+const footerCompany = [
+  {
+    itemText: "About",
+    itemLink: "/about",
+  },
+  {
+    itemText: "Blog",
+    itemLink: "#",
+  },
+  {
+    itemText: "Jobs",
+    itemLink: "#",
+  },
+  {
+    itemText: "Parteners",
+    itemLink: "#",
+  },
+  {
+    itemText: "Jobs",
+    itemLink: "#",
+  },
+];
+const footerLegal = [
+  {
+    itemText: "Claim",
+    itemLink: "/#",
+  },
+  {
+    itemText: "Privacy",
+    itemLink: "#",
+  },
+  {
+    itemText: "Terms",
+    itemLink: "#",
+  },
+];
+---
+
+<div class="mt-16"></div>
+<footer
+  class="relative bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 pt-28 rounded-t-3xl overflow-hidden"
+>
+  <div class="absolute right-0 top-0 h-full w-full flex justify-end">
+    <div class="w-full h-full overflow-hidden flex rounded-xl relative blur-2xl">
+      <span
+        class="absolute w-16 h-16 -top-1 -right-1 bg-green-500 rounded-md rotate-45"
+      ></span>
+      <span
+        class="absolute w-16 h-16 -bottom-1 -right-1 bg-[#FCDC58] rounded-md rotate-45"
+      ></span>
+      <span
+        class="absolute w-16 h-16 -bottom-1 -left-1 bg-primary rounded-md rotate-45"
+      ></span>
+    </div>
+  </div>
+
+  <div class="absolute left-0 bottom-0 h-full w-full flex items-end ">
+    <div class="w-full h-full overflow-hidden flex rounded-xl relative  blur-2xl ">
+      <span
+        class="absolute w-16 h-16 -top-1 -right-1 bg-green-500 rounded-md rotate-45"
+      ></span>
+      <span
+        class="absolute w-16 h-16 -bottom-1 -right-1 bg-[#FCDC58] rounded-md rotate-45"
+      ></span>
+      <span
+        class="absolute w-16 h-16 -bottom-1 -left-1 bg-primary rounded-md rotate-45"
+      ></span>
+    </div>
+  </div>
+  <Container className="pb-8 relative overflow-hidden">
+    <span
+      class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 blur-2xl opacity-20 w-24 h-16 sm:w-48 sm:h-36 rounded-full rotate-12 skew-x-6 bg-primary"
+    ></span>
+    <div
+      class="grid grid-cols-2 lg:grid-cols-3 lg:items-stretch gap-8 relative"
+    >
+      <div class="col-span-2 lg:col-span-1 h-auto flex flex-col">
+        <div class="h-full">
+          <a href="#" class="relative flex items-center gap-3">
+            <img
+              src="/logos/logo.png"
+              alt="logo"
+              class="w-30 h-40"
+              />
+          </a>
+          <Paragraph>
+            {settings.description}
+          </Paragraph>
+        </div>
+
+        <!-- social links -->
+        <div class="min-h-max flex items-center gap-4 text-heading-3 mt-8">
+          <ul class="m-0 p-0 list-none flex gap-4">
+            {
+              socials.map((social) => (
+                <li class="flex flex-row">
+                  <a
+                    class="flex"
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`red-social-${social.title}`}
+                  >
+                    <Icon name={social?.icon} width={36} height={36} />
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+
+      <!-- <GroupFooterNav>
+        <FooterNav title={"Company"} navItems={footerCompany} />
+        <FooterNav title={"Solutions"} navItems={footerNav1} />
+      </GroupFooterNav>
+
+      <GroupFooterNav>
+        <FooterNav title={"Support"} navItems={footerSupport} />
+        <FooterNav title={"Ressources"} navItems={footerLegal} />
+      </GroupFooterNav> -->
+    </div>
+  </Container>
+  <!-- footer bottom -->
+  <div class="bg-gradient-to-tl from-box-bg py-2 relative">
+    <Container>
+      <div
+        class="flex justify-between items-center gap-6 md:text-lg text-heading-3"
+      >
+        <div>
+          &copy; <span id="year"></span> SocialKids. Todos los derechos reservados
+        </div>
+      </div>
+    </Container>
+  </div>
+</footer>
