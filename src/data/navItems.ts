@@ -13,6 +13,6 @@ export const navItems = [
   },
   {
     href: "#features",
-    text: "Sobre mi",
+    text: "Sobre mí",
   },
 ];
