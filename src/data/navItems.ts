@@ -5,11 +5,11 @@ export const navItems = [
   },
   {
     href: "#services",
-    text: "Beneficios",
+    text: "Experiencias",
   },
   {
     href: "#about-us",
-    text: "Recomendaciones",
+    text: "Nuestras terapias",
   },
   {
     href: "#features",

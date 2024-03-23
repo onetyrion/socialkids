@@ -1,21 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/sections/Hero.astro';
-// import Services from '../components/sections/Services.astro';
-// import AboutUs from '../components/sections/AboutUs.astro';
-// import Features from '../components/sections/Features.astro';
-// import CTA from '../components/sections/CTA.astro';
-// import Brands from '../components/sections/Brands.astro';
+import Brands from '../components/sections/Brands.astro';
+import Services from '../components/sections/Services.astro';
+import AboutUs from '../components/sections/AboutUs.astro';
+import Features from '../components/sections/Features.astro';
+import CTA from '../components/sections/CTA.astro';
 import { settings } from '../data/settings';
 ---
 
 <Layout title={settings.title} description={settings.description}>
 	<main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
 		<Hero/>
-		<!-- <Brands/>
+		<Brands/>
 		<Services/>
 		<AboutUs/>
 		<Features/>
-		<CTA/> -->
+		<CTA/>
 	</main>
 </Layout>
