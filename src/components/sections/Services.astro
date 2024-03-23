@@ -29,7 +29,7 @@ type ServicesProps = {
             {
                     services.map((service: ServicesProps) => {
                     return (
-                            <Service title={service.title} description={service.description} icon={service.icon}>
+                            <Service title={service.title} description={`''${service.description}''`} icon={service.icon}>
                             </Service>
                             );
                     })

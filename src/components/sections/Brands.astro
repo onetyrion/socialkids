@@ -1,4 +1,5 @@
 ---
+import { socials } from "../../data/socials";
 import Container from "../shared/Container.astro";
 import Title from "../shared/Title.astro";
 
@@ -12,18 +13,26 @@ import Title from "../shared/Title.astro";
             </Title>
         </div>
         <div class="flex justify-center flex-wrap gap-4">
-            <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-                <img src="/logos/spotify.png" width="100" height="60" alt="spotify" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
-            </div>
-            <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-                <img src="/logos/slack.png" width="100" height="60" alt="slack" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
-            </div>
-            <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-                <img src="/logos/paypallogo.png" width="100" height="60" alt="paypal" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
-            </div>
-            <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-                <img src="/logos/spotify.png" width="100" height="60" alt="spotify" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
-            </div>
+            <a href={socials[0].url} target="_blank">
+                <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
+                    <img src="/logos/instagram.svg" width="100" height="60" alt="instagram" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
+                </div>
+            </a>
+            <a href={socials[1].url} target="_blank">
+                <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
+                    <img src="/logos/linkedin.svg" width="100" height="60" alt="linkedin" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
+                </div>
+            </a>
+            <a href={socials[2].url} target="_blank">
+                <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
+                    <img src="/logos/whatsapp.png" width="100" height="60" alt="whatsapp" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
+                </div>
+            </a>
+            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4i5SYE" target="_blank">
+                <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
+                    <img src="/logos/spotify.png" width="100" height="60" alt="spotify" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
+                </div>
+            </a>
         </div>
     </Container>
 </section>

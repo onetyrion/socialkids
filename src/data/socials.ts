@@ -12,7 +12,7 @@ export const socials = [
   {
     title: "Whatsapp",
     icon: "mdi:whatsapp",
-    url: "https://api.whatsapp.com/send?phone=56956177762&text=Hola%20necesito%20informaci%C3%B3n%20acerca%20de%20las%20terapias",
+    url: "https://api.whatsapp.com/send?phone=56979627693&text=Hola%20necesito%20informaci%C3%B3n%20acerca%20de%20las%20terapias",
   },
   {
     title: "Mail",
