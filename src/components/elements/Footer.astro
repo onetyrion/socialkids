@@ -72,6 +72,7 @@ import Paragraph from "../shared/Paragraph.astro";
                 socials.map((social) => (
                   <li class="flex flex-row">
                     <a
+                      id={social.id}
                       class="flex"
                       href={social.url}
                       onclick={"gtag('click_insta', social.url)"}
