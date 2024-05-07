@@ -1,21 +1,23 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/sections/Hero.astro';
-import Brands from '../components/sections/Brands.astro';
-import Services from '../components/sections/Services.astro';
-import AboutUs from '../components/sections/AboutUs.astro';
-import Features from '../components/sections/Features.astro';
-import CTA from '../components/sections/CTA.astro';
-import { settings } from '../data/settings';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/sections/Hero.astro";
+import Social from "../components/sections/Social.astro";
+import Experiences from "../components/sections/Experiences.astro";
+import Therapy from "../components/sections/Therapy.astro";
+import AboutMe from "../components/sections/AboutMe.astro";
+import CTA from "../components/sections/CTA.astro";
+import { settings } from "../data/settings";
+import Doctoralia from "../components/sections/Doctoralia.astro";
 ---
 
 <Layout title={settings.title} description={settings.description}>
-	<main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
-		<Hero/>
-		<Brands/>
-		<Services/>
-		<AboutUs/>
-		<Features/>
-		<CTA/>
-	</main>
+  <main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
+    <Hero />
+    <Social />
+    <Doctoralia />
+    <Experiences />
+    <Therapy />
+    <AboutMe />
+    <CTA />
+  </main>
 </Layout>

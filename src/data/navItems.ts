@@ -4,15 +4,15 @@ export const navItems = [
     text: "Inicio",
   },
   {
-    href: "#services",
+    href: "#experiences",
     text: "Experiencias",
   },
   {
-    href: "#about-us",
+    href: "#therapy",
     text: "Nuestras terapias",
   },
   {
-    href: "#features",
+    href: "#about-me",
     text: "Sobre mí",
   },
 ];
