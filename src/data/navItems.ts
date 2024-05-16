@@ -6,17 +6,17 @@ export const navItems = [
   },
   {
     href: "#experiences",
-    id: "experiences",
+    id: "experiences-nav",
     text: "Experiencias",
   },
   {
     href: "#therapy",
-    id: "therapy",
+    id: "therapy-nav",
     text: "Nuestras terapias",
   },
   {
-    href: "#about-me",
-    id: "about-me",
+    href: "#cta",
+    id: "cta-nav",
     text: "Sobre mí",
   },
 ];
