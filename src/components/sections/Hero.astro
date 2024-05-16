@@ -35,15 +35,16 @@ import ByNumber from "./ByNumber.astro";
         > en tu casa.
       </h1>
       <Paragraph className="mt-8">
-        Terapias a domicilio en Puerto Varas y alrededores para niños con trastornos de lenguaje,
-        habla y voz, incluyendo patologīas del neurodesarrollo. Favoreciendo la
-        comunicación en el contexto familiar, escolar y social.
+        Terapias a domicilio en Puerto Varas y alrededores para niños con
+        trastornos de lenguaje, habla y voz, incluyendo patologīas del
+        neurodesarrollo. Favoreciendo la comunicación en el contexto familiar,
+        escolar y social.
       </Paragraph>
       <div class="mt-10 w-full flex max-w-md mx-auto lg:mx-0">
         <div class="flex sm:flex-row flex-col gap-5 w-full">
           <form
-            action={socials[3].url}
             target="_blank"
+            action={socials[2].url}
             class="py-1 pl-6 w-full pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow
                       border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body focus-within:border-primary"
           >
@@ -64,6 +65,12 @@ import ByNumber from "./ByNumber.astro";
                 ></path>
               </svg>
             </span>
+            <input type="hidden" name="phone" value="56979627693" />
+            <input
+              type="hidden"
+              name="text"
+              value="Hola necesito información acerca de las terapias"
+            />
             <input
               type="email"
               name="email"
@@ -73,27 +80,32 @@ import ByNumber from "./ByNumber.astro";
               value="contacto@socialkids.cl"
               class="w-full py-3 outline-none bg-transparent"
             />
-              <Button id="contact-button" variant={"primary"} className={"min-w-max text-white"} aria-label="Botón consulta aqui">
-                <span class="hidden sm:flex relative z-[5]">
-                  Consulta aquí!
-                </span>
-                <span class="flex sm:hidden relative z-[5]">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-5 h-5"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
-                    ></path>
-                  </svg>
-                </span>
-              </Button>
+            <Button
+              id="contact-button"
+              variant={"primary"}
+              className={"min-w-max text-white"}
+              aria-label="Botón consulta aqui"
+            >
+              <span class="hidden sm:flex relative z-[5]">
+                Consulta aquí!
+              </span>
+              <span class="flex sm:hidden relative z-[5]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+                  ></path>
+                </svg>
+              </span>
+            </Button>
           </form>
         </div>
       </div>
