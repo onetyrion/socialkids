@@ -20,7 +20,7 @@ export const socials = [
   {
     title: "Mail",
     icon: "mdi:email",
-    url: "https://bit.ly/3VydIOc",
+    url: "https://api.whatsapp.com/send?phone=56979627693&text=Hola%20necesito%20informaci%C3%B3n%20acerca%20de%20las%20terapias",
     id: "mail_button",
   },
 ];
