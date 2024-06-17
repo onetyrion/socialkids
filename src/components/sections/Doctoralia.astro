@@ -5,19 +5,37 @@ import Title from "../shared/Title.astro";
 <section id="doctoralia">
   <div class="justify-center text-center">
     <div class="mb-8">
-      <Title>Buscame en Doctoralia!</Title>
+      <Title>Buscame en Doctoralia y Spotify!</Title>
     </div>
-    <a
-      id="zl-url"
-      class="zl-url"
-      href="https://www.doctoralia.cl/francisca-veloso-vega/fonoaudiologo/puerto-varas"
-      rel="nofollow"
-      data-zlw-doctor="francisca-veloso-vega"
-      data-zlw-type="big"
-      data-zlw-opinion="true"
-      data-zlw-hide-branding="true"
-      data-zlw-saas-only="true">Francisca Veloso Vega - Doctoralia.cl</a
-    >
+  </div>
+  <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+    <!-- embed doctoralia -->
+    <div class="content-center sm:max-w-[90%] lg:w-full justify-self-center">
+      <a
+        id="zl-url"
+        class="zl-url"
+        href="https://www.doctoralia.cl/francisca-veloso-vega/fonoaudiologo/puerto-varas"
+        rel="nofollow"
+        width="100%"
+        data-zlw-doctor="francisca-veloso-vega"
+        data-zlw-type="big"
+        data-zlw-opinion="true"
+        data-zlw-hide-branding="true"
+        data-zlw-saas-only="true">Francisca Veloso Vega - Doctoralia.cl</a
+      >
+    </div>
+    <!-- embed spotify -->
+    <div class="content-center sm:max-w-[90%] lg:w-full justify-self-center">
+      <iframe
+        style="border-radius:12px; text-align:-webkit-center;"
+        height="352"
+        src="https://open.spotify.com/embed/playlist/4wNqAQeQA1g87fSjGliGGm?utm_source=generator"
+        width="100%"
+        frameBorder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"></iframe>
+    </div>
   </div>
 </section>
 <script>
