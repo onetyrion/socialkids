@@ -5,7 +5,7 @@ export const navItems = [
     text: "Inicio",
   },
   {
-    href: "#experiences",
+    href: "#doctoralia",
     id: "experiences-nav",
     text: "Experiencias",
   },
