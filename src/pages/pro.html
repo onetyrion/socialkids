@@ -15,15 +15,23 @@
         rel="stylesheet">
 
     <style>
-        /* --- VARIABLES & RESET (Sin cambios) --- */
+        /* --- VARIABLES & RESET (Actualizado con Rosa Corporativo) --- */
         :root {
             --primary: #3B82F6;
-            /* Royal Blue */
+            /* Azul Real (Mantenido) */
             --primary-dark: #2563EB;
+
+            /* NUEVO: Rosa Corporativo Elegante */
+            --rose-primary: #BE185D;
+            /* Rosa Palo Profundo para textos/iconos */
+            --rose-light: #FCE7F3;
+            /* Fondo rosa muy suave */
+            --rose-accent: #F472B6;
+            /* Rosa intermedio para detalles */
+
             --secondary: #4ADE80;
-            /* Soft Green */
-            --accent: #F472B6;
-            /* Pink Pastel */
+            /* Verde Suave (Mantenido) */
+
             --dark: #0F172A;
             --gray: #64748B;
             --light: #F8FAFC;
@@ -66,7 +74,7 @@
             list-style: none;
         }
 
-        /* --- UTILITIES (Sin cambios) --- */
+        /* --- UTILITIES --- */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -109,8 +117,20 @@
             border-color: var(--primary);
         }
 
+        /* NUEVO BOTÓN ROSA */
+        .btn-rose {
+            background: var(--rose-primary);
+            color: white;
+        }
+
+        .btn-rose:hover {
+            background: #9D174D;
+            box-shadow: 0 10px 20px rgba(190, 24, 93, 0.2);
+        }
+
         .text-gradient {
-            background: linear-gradient(135deg, var(--primary) 0%, #8B5CF6 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--rose-accent) 100%);
+            /* Gradiente Azul a Rosa */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -120,8 +140,9 @@
         }
 
         .badge {
-            background: #DBEAFE;
-            color: var(--primary-dark);
+            background: var(--rose-light);
+            color: var(--rose-primary);
+            /* Badge Rosa */
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.85rem;
@@ -130,7 +151,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* --- ANIMATIONS (Sin cambios) --- */
+        /* --- ANIMATIONS --- */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -159,7 +180,7 @@
             }
         }
 
-        /* --- NAVBAR (Sin cambios) --- */
+        /* --- NAVBAR --- */
         nav {
             position: fixed;
             top: 0;
@@ -238,41 +259,28 @@
             gap: 16px;
         }
 
-        /* --- NEW IMAGE PHONE MOCKUP --- */
         .phone-container {
             position: relative;
             width: 320px;
-            /* Ancho típico de iPhone */
             height: 650px;
-            /* Alto típico */
             margin: 0 auto;
-            /* El borde actúa como el bisel del teléfono */
             border: 14px solid #111;
             border-radius: 55px;
-            /* Redondeo pronunciado */
             background: #111;
-            /* Sombra fuerte para dar profundidad */
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
-            /* La animación flotante se aplica al contenedor completo */
             animation: float 6s ease-in-out infinite;
-            /* Importante: oculta las esquinas de la imagen que sobresalen */
             overflow: hidden;
             z-index: 10;
         }
 
-        .phone-image {
+        .phone-iframe {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            /* Asegura que la imagen cubra todo el espacio sin deformarse */
-            display: block;
-            border-radius: 42px;
-            /* Un poco menos que el contenedor para que encaje dentro del borde */
-            background-color: #fff;
-            /* Fondo blanco por si la imagen tarda en cargar */
+            border: none;
+            background: white;
         }
 
-        /* --- FEATURES SECTION (Sin cambios) --- */
+        /* --- FEATURES SECTION --- */
         .features {
             background: white;
         }
@@ -293,9 +301,10 @@
 
         .feature-card:hover {
             transform: translateY(-5px);
-            background: #EFF6FF;
+            background: var(--rose-light);
         }
 
+        /* Hover Rosa Suave */
         .icon-box {
             width: 50px;
             height: 50px;
@@ -306,66 +315,100 @@
             justify-content: center;
             font-size: 1.5rem;
             margin-bottom: 20px;
-            color: var(--primary);
+            color: var(--rose-primary);
+            /* Icono Rosa */
             box-shadow: var(--shadow-sm);
         }
 
-        /* --- PRICING SECTION (Sin cambios) --- */
-        .pricing-grid {
+        /* --- NUEVA SECCIÓN DE PLANES (Sin Precios) --- */
+        .plans-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
             margin-top: 60px;
-            max-width: 900px;
+            max-width: 1000px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .price-card {
+        .plan-card {
             background: white;
-            border: 1px solid #E2E8F0;
             border-radius: 24px;
             padding: 40px;
             position: relative;
             display: flex;
             flex-direction: column;
-        }
-
-        .price-card.pro {
-            border: 2px solid var(--primary);
             box-shadow: var(--shadow-lg);
-            transform: scale(1.05);
-            z-index: 2;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
         }
 
-        .price-amount {
-            font-size: 3rem;
-            font-weight: 800;
-            font-family: 'Nunito';
-            color: var(--dark);
-            margin: 20px 0;
+        .plan-card:hover {
+            transform: translateY(-5px);
         }
 
-        .price-period {
-            font-size: 1rem;
-            color: var(--gray);
-            font-weight: 500;
+        /* Tarjeta Rosa (Independiente) */
+        .plan-card.rose {
+            border-top: 6px solid var(--rose-primary);
         }
 
-        .check-list li {
-            margin-bottom: 12px;
+        .plan-card.rose .plan-icon {
+            color: var(--rose-primary);
+            background: var(--rose-light);
+        }
+
+        /* Tarjeta Azul (Equipo) */
+        .plan-card.blue {
+            border-top: 6px solid var(--primary);
+        }
+
+        .plan-card.blue .plan-icon {
+            color: var(--primary);
+            background: #EFF6FF;
+        }
+
+        .plan-header {
             display: flex;
-            gap: 10px;
             align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .plan-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .plan-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .plan-description {
             color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+            flex-grow: 1;
         }
 
-        .check-icon {
-            color: var(--secondary);
-            font-weight: bold;
+        .coming-soon-badge {
+            display: inline-block;
+            background: #F3F4F6;
+            color: var(--gray);
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 24px;
         }
 
-        /* --- FOOTER (Sin cambios) --- */
+        /* --- FOOTER --- */
         footer {
             background: var(--dark);
             color: white;
@@ -414,16 +457,11 @@
                 justify-content: center;
             }
 
-            /* Ajuste para que el celular no sea gigante en móviles */
             .phone-container {
                 width: 280px;
                 height: 560px;
                 margin-top: 20px;
                 border-width: 10px;
-            }
-
-            .price-card.pro {
-                transform: scale(1);
             }
         }
     </style>
@@ -438,10 +476,9 @@
             </a>
             <div class="nav-links">
                 <a href="#features">Características</a>
-                <a href="#pricing">Precios</a>
-                <a href="#faq">Preguntas</a>
+                <a href="#plans">Planes</a> <a href="#faq">Preguntas</a>
                 <a href="#" style="color: var(--primary); font-weight: 700;">Ingresar</a>
-                <a href="#" class="btn btn-primary" style="padding: 8px 20px;">Crear Cuenta Gratis</a>
+                <a href="#" class="btn btn-rose" style="padding: 8px 20px;">Lista de Espera</a>
             </div>
         </div>
     </nav>
@@ -449,13 +486,13 @@
     <section class="hero">
         <div class="container hero-grid">
             <div class="hero-text reveal">
-                <span class="badge">Nuevo en Chile 🇨🇱</span>
+                <span class="badge">Próximamente en Chile 🇨🇱</span>
                 <h1>Menos papeleo, <br><span class="text-gradient">más conexión.</span></h1>
                 <p>El primer sistema de gestión clínica diseñado para terapeutas infantiles. Envía avances por WhatsApp,
                     calcula tests y olvida el caos administrativo.</p>
                 <div class="hero-ctas">
-                    <a href="#" class="btn btn-primary">Empezar Gratis</a>
-                    <a href="#features" class="btn btn-secondary">Cómo funciona</a>
+                    <a href="#plans" class="btn btn-rose">Unirme a la Lista de Espera</a> <a href="#features"
+                        class="btn btn-secondary">Cómo funciona</a>
                 </div>
                 <div
                     style="margin-top: 30px; display: flex; align-items: center; gap: 10px; color: var(--gray); font-size: 0.9rem;">
@@ -470,7 +507,7 @@
                             style="width:30px; height:30px; background:#bbb; border-radius:50%; border:2px solid white; margin-left:-10px;">
                         </div>
                     </div>
-                    <p>Usado por +100 Terapeutas</p>
+                    <p>+100 Terapeutas interesados</p>
                 </div>
             </div>
 
@@ -487,7 +524,7 @@
             <div style="text-align: center; max-width: 600px; margin: 0 auto;" class="reveal">
                 <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Todo lo que tu consulta necesita</h2>
                 <p style="color: var(--gray);">Olvídate de Excel, Word y los papeles perdidos. Centraliza tu práctica
-                    clínica.</p>
+                    clínica con elegancia y simplicidad.</p>
             </div>
 
             <div class="feature-grid">
@@ -495,68 +532,65 @@
                     <div class="icon-box">📊</div>
                     <h3>Calculadora de Tests</h3>
                     <p style="margin-top: 10px; color: var(--gray); font-size: 0.95rem;">
-                        Ingresa puntajes brutos (STSG, TEPROSIF) y obtén diagnósticos y percentiles automáticos. No más
-                        cálculos manuales.
+                        Ingresa puntajes brutos (STSG, TEPROSIF) y obtén diagnósticos y percentiles automáticos.
+                        Precisión profesional.
                     </p>
                 </div>
                 <div class="feature-card reveal">
                     <div class="icon-box">💬</div>
                     <h3>Reportes WhatsApp</h3>
                     <p style="margin-top: 10px; color: var(--gray); font-size: 0.95rem;">
-                        Envía un resumen profesional con foto y tarea al celular de los padres en 1 clic. Fideliza a las
-                        familias.
+                        Envía resúmenes hermosos y profesionales con foto y tarea al celular de los padres en 1 clic.
+                        Conecta de verdad.
                     </p>
                 </div>
                 <div class="feature-card reveal">
                     <div class="icon-box">🗂️</div>
                     <h3>Ficha Clínica Digital</h3>
                     <p style="margin-top: 10px; color: var(--gray); font-size: 0.95rem;">
-                        Historial de sesiones, anamnesis y documentos seguros en la nube. Accede desde tu celular o
-                        tablet.
+                        Historial de sesiones, anamnesis y documentos seguros en la nube. Tu consulta ordenada y
+                        accesible siempre.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="pricing" class="section-padding" style="background: #F1F5F9;">
+    <section id="plans" class="section-padding" style="background: #F1F5F9;">
         <div class="container">
             <div style="text-align: center; margin-bottom: 50px;" class="reveal">
-                <h2 style="font-size: 2.5rem;">Precios simples</h2>
-                <p>Empieza gratis. Crece cuando lo necesites.</p>
+                <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Diseñado para tu etapa</h2>
+                <p style="color: var(--gray); max-width: 600px; margin: 0 auto;">
+                    Estamos preparando planes flexibles que se adaptan a tu forma de trabajo. <br>
+                    <strong>¡Sé de los primeros en probarlo cuando lancemos!</strong>
+                </p>
             </div>
 
-            <div class="pricing-grid">
-                <div class="price-card reveal">
-                    <h3>Plan Semilla</h3>
-                    <div class="price-amount">$0 <span class="price-period">/mes</span></div>
-                    <p style="color: var(--gray); margin-bottom: 24px;">Perfecto para empezar tu cartera.</p>
-                    <a href="#" class="btn btn-secondary" style="width: 100%; margin-bottom: 24px;">Crear Cuenta
-                        Gratis</a>
-                    <ul class="check-list">
-                        <li><span class="check-icon">✓</span> Hasta 3 Pacientes Activos</li>
-                        <li><span class="check-icon">✓</span> 10 Sesiones al mes</li>
-                        <li><span class="check-icon">✓</span> Ficha Clínica Básica</li>
-                        <li><span class="check-icon">✓</span> Reportes por WhatsApp</li>
-                    </ul>
+            <div class="plans-grid">
+                <div class="plan-card rose reveal">
+                    <div class="plan-header">
+                        <div class="plan-icon">👩‍⚕️</div>
+                        <h3 class="plan-title">Para Terapeutas Independientes</h3>
+                    </div>
+                    <div class="coming-soon-badge">Próximamente</div>
+                    <p class="plan-description">
+                        Ideal si manejas tu propia cartera de pacientes. Organiza tu agenda, fichas y cobros en un
+                        entorno digital diseñado para darte libertad y orden profesional.
+                    </p>
+                    <a href="#" class="btn btn-rose" style="width: 100%;">Notificarme del Lanzamiento</a>
                 </div>
 
-                <div class="price-card pro reveal">
-                    <div
-                        style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">
-                        RECOMENDADO</div>
-                    <h3>Plan Consulta</h3>
-                    <div class="price-amount">$14.990 <span class="price-period">/mes</span></div>
-                    <p style="color: var(--gray); margin-bottom: 24px;">Para profesionales activos.</p>
-                    <a href="#" class="btn btn-primary" style="width: 100%; margin-bottom: 24px;">Empezar Prueba
-                        Gratis</a>
-                    <ul class="check-list">
-                        <li><span class="check-icon">✓</span> <strong>Pacientes Ilimitados</strong></li>
-                        <li><span class="check-icon">✓</span> Sesiones Ilimitadas</li>
-                        <li><span class="check-icon">✓</span> <strong>Calculadora de Tests Automática</strong></li>
-                        <li><span class="check-icon">✓</span> Fotos ilimitadas</li>
-                        <li><span class="check-icon">✓</span> Soporte Prioritario</li>
-                    </ul>
+                <div class="plan-card blue reveal">
+                    <div class="plan-header">
+                        <div class="plan-icon">🏥</div>
+                        <h3 class="plan-title">Para Centros y Equipos</h3>
+                    </div>
+                    <div class="coming-soon-badge">Próximamente</div>
+                    <p class="plan-description">
+                        Potencia la colaboración. Herramientas pensadas para equipos pequeños que necesitan compartir
+                        historias clínicas, gestionar roles y unificar la comunicación con las familias.
+                    </p>
+                    <a href="#" class="btn btn-primary" style="width: 100%;">Notificarme del Lanzamiento</a>
                 </div>
             </div>
         </div>
@@ -587,7 +621,6 @@
                 }
             }
         }
-        // Trigger once on load
         reveal();
     </script>
 </body>
