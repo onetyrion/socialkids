@@ -3,16 +3,24 @@ export interface Props {
   href: string;
   text: string;
   id: string;
+  badge?: string;
 }
-const { href, text, id } = Astro.props;
+const { href, text, id, badge } = Astro.props;
 ---
 
 <li>
   <a
     href={href}
     id={id}
-    class="duration-300 font-medium ease-linear hover:text-primary py-3"
+    class="duration-300 font-medium ease-linear hover:text-primary py-3 flex items-center gap-2"
   >
     {text}
+    {
+      badge && (
+        <span class="inline-flex items-center justify-center px-2 py-0.5 text-xs font-bold leading-none text-white bg-gradient-to-r from-pink-500 to-purple-600 rounded-full animate-pulse">
+          {badge}
+        </span>
+      )
+    }
   </a>
 </li>

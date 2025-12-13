@@ -23,5 +23,6 @@ export const navItems = [
     href: "/pro",
     id: "socialkids-pro",
     text: "SocialKids Pro",
+    badge: "Nuevo"
   }
 ];
