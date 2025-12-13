@@ -27,6 +27,17 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        /* Hide scrollbar globally */
+        html, body {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
         body {
             font-family: var(--font-stack);
             background-color: var(--bg-app);
@@ -56,7 +67,6 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 10px;
         }
 
         .logo-svg {
@@ -73,7 +83,7 @@
         }
 
         .brand-pro {
-            color: var(--btn-orange);
+            color: #BE185D;
             font-weight: 800;
         }
         
@@ -156,8 +166,9 @@
         }
         .dot.hollow { background-color: white; border: 2px solid var(--text-grey); }
         .line {
-            position: absolute; top: 16px; bottom: -4px;
+            position: absolute; top: 16px; bottom: -30px;
             width: 2px; background-color: #E5E7EB; z-index: 1;
+            left: 50%; transform: translateX(-50%);
         }
         .agenda-item:last-child .line { display: none; }
         .appointment-info { flex: 1; padding-top: 0; }
@@ -175,6 +186,7 @@
 </head>
 <body>
 
+    <!-- Esconder scroll pero que siga funcionando el scroll solo ocultar visiblemente -->
 <div class="app-container">
     
     <header>
@@ -182,23 +194,23 @@
             <div class="logo-container">
                 <svg class="logo-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" fill="white"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.3333 12.6667C21.3333 14.5076 19.8409 16 18 16C16.1591 16 14.6667 14.5076 14.6667 12.6667C14.6667 10.8257 16.1591 9.33331 18 9.33331C19.8409 9.33331 21.3333 10.8257 21.3333 12.6667ZM17.3333 18.6666C14.3878 18.6666 12 21.0545 12 24H24C24 21.0545 21.6122 18.6666 18.6667 18.6666H17.3333Z" fill="var(--card-dark)"/>
-                    <path d="M14.6667 13.3333C14.6667 15.1743 13.1743 16.6667 11.3333 16.6667C9.49238 16.6667 8 15.1743 8 13.3333C8 11.4924 9.49238 10 11.3333 10C13.1743 10 14.6667 11.4924 14.6667 13.3333Z" fill="var(--btn-orange)"/>
-                    <path d="M16.6667 18.6667H15.3333C12.3878 18.6667 10 21.0545 10 24H11.3333C11.3333 21.7909 13.1242 20 15.3333 20H16.6667V18.6667Z" fill="var(--btn-orange)"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.3333 12.6667C21.3333 14.5076 19.8409 16 18 16C16.1591 16 14.6667 14.5076 14.6667 12.6667C14.6667 10.8257 16.1591 9.33331 18 9.33331C19.8409 9.33331 21.3333 10.8257 21.3333 12.6667ZM17.3333 18.6666C14.3878 18.6666 12 21.0545 12 24H24C24 21.0545 21.6122 18.6666 18.6667 18.6666H17.3333Z" fill="#3B82F6"/>
+                    <path d="M14.6667 13.3333C14.6667 15.1743 13.1743 16.6667 11.3333 16.6667C9.49238 16.6667 8 15.1743 8 13.3333C8 11.4924 9.49238 10 11.3333 10C13.1743 10 14.6667 11.4924 14.6667 13.3333Z" fill="#BE185D"/>
+                    <path d="M16.6667 18.6667H15.3333C12.3878 18.6667 10 21.0545 10 24H11.3333C11.3333 21.7909 13.1242 20 15.3333 20H16.6667V18.6667Z" fill="#BE185D"/>
                 </svg>
                 
                 <span class="brand-text">SocialKids <span class="brand-pro">Pro</span></span>
             </div>
 
             <div class="user-actions">
-                <img src="https://i.pravatar.cc/150?u=a042581f4e29026024d" alt="User" class="avatar">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="User" class="avatar">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="bell-btn">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                 </svg>
             </div>
         </div>
         <div class="greeting">
-            <h1>Hola, Cami 👋</h1>
+            <h1>Hola, Fran 👋</h1>
             <p>Viernes, 12 Dic</p>
         </div>
     </header>
