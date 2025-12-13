@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SocialKids | Gestión Clínica para Terapeutas Infantiles</title>
+    <title>SocialKids | Gestión Clínica Segura para Terapeutas</title>
     <meta name="description"
-        content="El primer software para fonoaudiólogos y terapeutas que conecta con las familias. Gestión, tests automáticos y reportes por WhatsApp.">
+        content="Software para Fonoaudiólogos y Terapeutas Ocupacionales. Gestión clínica, seguridad de datos y reportes automáticos.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,28 +15,19 @@
         rel="stylesheet">
 
     <style>
-        /* --- VARIABLES & RESET (Actualizado con Rosa Corporativo) --- */
+        /* --- VARIABLES (Paleta Corporativa: Azul + Rosa Elegante) --- */
         :root {
             --primary: #3B82F6;
-            /* Azul Real (Mantenido) */
             --primary-dark: #2563EB;
-
-            /* NUEVO: Rosa Corporativo Elegante */
             --rose-primary: #BE185D;
-            /* Rosa Palo Profundo para textos/iconos */
-            --rose-light: #FCE7F3;
-            /* Fondo rosa muy suave */
-            --rose-accent: #F472B6;
-            /* Rosa intermedio para detalles */
-
+            --rose-light: #FDF2F8;
+            --rose-accent: #EC4899;
             --secondary: #4ADE80;
-            /* Verde Suave (Mantenido) */
-
             --dark: #0F172A;
             --gray: #64748B;
             --light: #F8FAFC;
             --white: #FFFFFF;
-            --glass: rgba(255, 255, 255, 0.85);
+            --glass: rgba(255, 255, 255, 0.9);
             --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
             --radius: 16px;
@@ -81,56 +72,8 @@
             padding: 0 24px;
         }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 32px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: var(--primary);
-            border: 2px solid var(--light);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--primary);
-        }
-
-        /* NUEVO BOTÓN ROSA */
-        .btn-rose {
-            background: var(--rose-primary);
-            color: white;
-        }
-
-        .btn-rose:hover {
-            background: #9D174D;
-            box-shadow: 0 10px 20px rgba(190, 24, 93, 0.2);
-        }
-
         .text-gradient {
             background: linear-gradient(135deg, var(--primary) 0%, var(--rose-accent) 100%);
-            /* Gradiente Azul a Rosa */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -142,13 +85,108 @@
         .badge {
             background: var(--rose-light);
             color: var(--rose-primary);
-            /* Badge Rosa */
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        /* --- BOTONES & FORMULARIOS (MEJORADO PARA CONVERSIÓN) --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-rose {
+            background: var(--rose-primary);
+            color: white;
+            box-shadow: 0 4px 14px rgba(190, 24, 93, 0.3);
+        }
+
+        .btn-rose:hover {
+            background: #9D174D;
+            box-shadow: 0 6px 20px rgba(190, 24, 93, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid #E2E8F0;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+        }
+
+        /* Estilos del Formulario de Captura (Hero) */
+        .capture-form {
+            display: flex;
+            gap: 10px;
+            max-width: 480px;
+            margin-bottom: 16px;
+            background: white;
+            padding: 6px;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #E2E8F0;
+        }
+
+        .capture-input {
+            flex: 1;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-size: 1rem;
+            outline: none;
+            color: var(--dark);
+        }
+
+        .capture-input::placeholder {
+            color: #94A3B8;
+        }
+
+        /* Mensaje de regalo (Lead Magnet) */
+        .lead-magnet-text {
+            font-size: 0.9rem;
+            color: var(--rose-primary);
+            font-weight: 600;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* --- TRUST BADGES (SEGURIDAD) --- */
+        .trust-row {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-top: 24px;
+            font-size: 0.85rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         /* --- ANIMATIONS --- */
@@ -228,7 +266,7 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            padding-top: 160px;
+            padding-top: 150px;
             padding-bottom: 100px;
             background: radial-gradient(circle at 50% 0%, #EFF6FF 0%, #F8FAFC 100%);
             position: relative;
@@ -237,35 +275,32 @@
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
             align-items: center;
         }
 
         .hero-text h1 {
-            font-size: 3.5rem;
-            margin: 24px 0;
+            font-size: 3.2rem;
+            margin: 20px 0;
             color: var(--dark);
+            line-height: 1.1;
         }
 
         .hero-text p {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: var(--gray);
-            margin-bottom: 40px;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 16px;
+            margin-bottom: 30px;
+            line-height: 1.5;
         }
 
         .phone-container {
             position: relative;
-            width: 320px;
-            height: 650px;
+            width: 300px;
+            height: 600px;
             margin: 0 auto;
-            border: 14px solid #111;
-            border-radius: 55px;
+            border: 12px solid #111;
+            border-radius: 50px;
             background: #111;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
             animation: float 6s ease-in-out infinite;
@@ -304,7 +339,6 @@
             background: var(--rose-light);
         }
 
-        /* Hover Rosa Suave */
         .icon-box {
             width: 50px;
             height: 50px;
@@ -316,11 +350,10 @@
             font-size: 1.5rem;
             margin-bottom: 20px;
             color: var(--rose-primary);
-            /* Icono Rosa */
             box-shadow: var(--shadow-sm);
         }
 
-        /* --- NUEVA SECCIÓN DE PLANES (Sin Precios) --- */
+        /* --- PLANS SECTION --- */
         .plans-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -347,7 +380,6 @@
             transform: translateY(-5px);
         }
 
-        /* Tarjeta Rosa (Independiente) */
         .plan-card.rose {
             border-top: 6px solid var(--rose-primary);
         }
@@ -357,7 +389,6 @@
             background: var(--rose-light);
         }
 
-        /* Tarjeta Azul (Equipo) */
         .plan-card.blue {
             border-top: 6px solid var(--primary);
         }
@@ -453,15 +484,34 @@
                 font-size: 2.5rem;
             }
 
-            .hero-ctas {
-                justify-content: center;
-            }
-
             .phone-container {
                 width: 280px;
                 height: 560px;
                 margin-top: 20px;
                 border-width: 10px;
+            }
+
+            .capture-form {
+                margin-left: auto;
+                margin-right: auto;
+                flex-direction: column;
+                border-radius: 20px;
+                padding: 12px;
+            }
+
+            .capture-input {
+                text-align: center;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .btn-rose {
+                width: 100%;
+            }
+
+            .trust-row {
+                justify-content: center;
+                flex-wrap: wrap;
             }
         }
     </style>
@@ -476,39 +526,64 @@
             </a>
             <div class="nav-links">
                 <a href="#features">Características</a>
-                <a href="#plans">Planes</a> <a href="#faq">Preguntas</a>
-                <a href="#" style="color: var(--primary); font-weight: 700;">Ingresar</a>
-                <a href="#" class="btn btn-rose" style="padding: 8px 20px;">Lista de Espera</a>
+                <a href="#plans">Planes</a>
+                <a href="#faq">Preguntas</a>
+                <a href="#hero-form" class="btn btn-rose" style="padding: 8px 20px;">Lista de Espera</a>
             </div>
         </div>
     </nav>
 
-    <section class="hero">
+    <section class="hero" id="hero-form">
         <div class="container hero-grid">
             <div class="hero-text reveal">
                 <span class="badge">Próximamente en Chile 🇨🇱</span>
+
                 <h1>Menos papeleo, <br><span class="text-gradient">más conexión.</span></h1>
-                <p>El primer sistema de gestión clínica diseñado para terapeutas infantiles. Envía avances por WhatsApp,
-                    calcula tests y olvida el caos administrativo.</p>
-                <div class="hero-ctas">
-                    <a href="#plans" class="btn btn-rose">Unirme a la Lista de Espera</a> <a href="#features"
-                        class="btn btn-secondary">Cómo funciona</a>
+                <p>El primer sistema de gestión diseñado para <strong>Fonoaudiólogos, Terapeutas Ocupacionales y
+                        Psicopedagogos</strong>. Envía avances por WhatsApp y olvida el caos administrativo.</p>
+
+                <div class="lead-magnet-text">
+                    🎁 Únete hoy y recibe INCREÍBLES descuentos en planes.
                 </div>
-                <div
-                    style="margin-top: 30px; display: flex; align-items: center; gap: 10px; color: var(--gray); font-size: 0.9rem;">
-                    <div style="display: flex;">
-                        <div
-                            style="width:30px; height:30px; background:#ddd; border-radius:50%; border:2px solid white;">
-                        </div>
-                        <div
-                            style="width:30px; height:30px; background:#ccc; border-radius:50%; border:2px solid white; margin-left:-10px;">
-                        </div>
-                        <div
-                            style="width:30px; height:30px; background:#bbb; border-radius:50%; border:2px solid white; margin-left:-10px;">
-                        </div>
+
+                <form class="capture-form" onsubmit="registerUser(event)">
+                    <input type="email" class="capture-input" placeholder="Tu correo electrónico..." required>
+                    <button type="submit" class="btn btn-rose">Recibir Regalo + Acceso</button>
+                </form>
+
+                <div class="trust-row">
+                    <div class="trust-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                        Datos Encriptados
                     </div>
-                    <p>+100 Terapeutas interesados</p>
+                    <div class="trust-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Cumplimiento Ley 19.628
+                    </div>
+                    <div class="trust-item">
+                        <span style="display:flex; margin-left: 10px;">
+                            <div
+                                style="width:24px; height:24px; background:#ddd; border-radius:50%; border:2px solid white;">
+                            </div>
+                            <div
+                                style="width:24px; height:24px; background:#ccc; border-radius:50%; border:2px solid white; margin-left:-8px;">
+                            </div>
+                            <div
+                                style="width:24px; height:24px; background:#bbb; border-radius:50%; border:2px solid white; margin-left:-8px;">
+                            </div>
+                        </span>
+                        <span style="margin-left: 8px; font-size: 0.8rem;">+100 Terapeutas en lista</span>
+                    </div>
                 </div>
+
             </div>
 
             <div class="phone-container">
@@ -524,7 +599,7 @@
             <div style="text-align: center; max-width: 600px; margin: 0 auto;" class="reveal">
                 <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Todo lo que tu consulta necesita</h2>
                 <p style="color: var(--gray);">Olvídate de Excel, Word y los papeles perdidos. Centraliza tu práctica
-                    clínica con elegancia y simplicidad.</p>
+                    con elegancia y seguridad clínica.</p>
             </div>
 
             <div class="feature-grid">
@@ -532,24 +607,24 @@
                     <div class="icon-box">📊</div>
                     <h3>Calculadora de Tests</h3>
                     <p style="margin-top: 10px; color: var(--gray); font-size: 0.95rem;">
-                        Ingresa puntajes brutos (STSG, TEPROSIF) y obtén diagnósticos y percentiles automáticos.
-                        Precisión profesional.
+                        Ingresa puntajes brutos (STSG, TEPROSIF) y obtén diagnósticos automáticos. Reduce errores y
+                        ahorra horas de cálculo.
                     </p>
                 </div>
                 <div class="feature-card reveal">
                     <div class="icon-box">💬</div>
                     <h3>Reportes WhatsApp</h3>
                     <p style="margin-top: 10px; color: var(--gray); font-size: 0.95rem;">
-                        Envía resúmenes hermosos y profesionales con foto y tarea al celular de los padres en 1 clic.
-                        Conecta de verdad.
+                        Envía resúmenes hermosos con foto y tarea al celular de los padres en 1 clic. Fidelización real
+                        sin esfuerzo.
                     </p>
                 </div>
                 <div class="feature-card reveal">
-                    <div class="icon-box">🗂️</div>
-                    <h3>Ficha Clínica Digital</h3>
+                    <div class="icon-box">🔒</div>
+                    <h3>Seguridad Total</h3>
                     <p style="margin-top: 10px; color: var(--gray); font-size: 0.95rem;">
-                        Historial de sesiones, anamnesis y documentos seguros en la nube. Tu consulta ordenada y
-                        accesible siempre.
+                        Historial clínico, anamnesis y datos sensibles protegidos con encriptación de nivel bancario. Tu
+                        tranquilidad es primero.
                     </p>
                 </div>
             </div>
@@ -561,8 +636,8 @@
             <div style="text-align: center; margin-bottom: 50px;" class="reveal">
                 <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Diseñado para tu etapa</h2>
                 <p style="color: var(--gray); max-width: 600px; margin: 0 auto;">
-                    Estamos preparando planes flexibles que se adaptan a tu forma de trabajo. <br>
-                    <strong>¡Sé de los primeros en probarlo cuando lancemos!</strong>
+                    Planes flexibles que se adaptan a tu forma de trabajo. <br>
+                    <strong>¡Asegura tu precio de lanzamiento uniéndote hoy!</strong>
                 </p>
             </div>
 
@@ -570,27 +645,26 @@
                 <div class="plan-card rose reveal">
                     <div class="plan-header">
                         <div class="plan-icon">👩‍⚕️</div>
-                        <h3 class="plan-title">Para Terapeutas Independientes</h3>
+                        <h3 class="plan-title">Plan Independiente</h3>
                     </div>
                     <div class="coming-soon-badge">Próximamente</div>
                     <p class="plan-description">
-                        Ideal si manejas tu propia cartera de pacientes. Organiza tu agenda, fichas y cobros en un
-                        entorno digital diseñado para darte libertad y orden profesional.
+                        Para quienes manejan su propia cartera. Organiza agenda, fichas y cobros con libertad total.
                     </p>
-                    <a href="#" class="btn btn-rose" style="width: 100%;">Notificarme del Lanzamiento</a>
+                    <a href="#hero-form" class="btn btn-rose" style="width: 100%;">Notificarme del Lanzamiento</a>
                 </div>
 
                 <div class="plan-card blue reveal">
                     <div class="plan-header">
                         <div class="plan-icon">🏥</div>
-                        <h3 class="plan-title">Para Centros y Equipos</h3>
+                        <h3 class="plan-title">Plan Centros</h3>
                     </div>
                     <div class="coming-soon-badge">Próximamente</div>
                     <p class="plan-description">
-                        Potencia la colaboración. Herramientas pensadas para equipos pequeños que necesitan compartir
-                        historias clínicas, gestionar roles y unificar la comunicación con las familias.
+                        Para equipos que necesitan colaborar. Fichas compartidas, gestión de roles y administración
+                        centralizada.
                     </p>
-                    <a href="#" class="btn btn-primary" style="width: 100%;">Notificarme del Lanzamiento</a>
+                    <a href="#hero-form" class="btn btn-secondary" style="width: 100%;">Notificarme del Lanzamiento</a>
                 </div>
             </div>
         </div>
@@ -601,14 +675,14 @@
             <span class="footer-logo">🧸 SocialKids</span>
             <div class="footer-links">
                 <a href="#">Términos y Condiciones</a>
-                <a href="#">Privacidad</a>
-                <a href="#">Contacto</a>
+                <a href="#">Privacidad de Datos</a> <a href="#">Contacto</a>
             </div>
             <p class="copyright">© 2025 SocialKids Chile. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script>
+        // Animación de scroll
         window.addEventListener('scroll', reveal);
         function reveal() {
             var reveals = document.querySelectorAll('.reveal');
@@ -622,6 +696,28 @@
             }
         }
         reveal();
+
+        // Simulación de registro (Feedback visual para el usuario)
+        function registerUser(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const input = e.target.querySelector('input');
+            const originalText = btn.innerText;
+
+            if (input.value) {
+                btn.innerText = "¡Gracias! 📩";
+                btn.style.backgroundColor = "#10B981"; // Verde éxito
+                alert("¡Genial! Has sido añadido a la lista prioritaria. Te enviaremos más información pronto.");
+                input.value = "";
+
+                // Aquí iría tu código para guardar en BD o Google Sheets
+
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.backgroundColor = "";
+                }, 3000);
+            }
+        }
     </script>
 </body>
 
