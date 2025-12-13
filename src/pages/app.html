@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialKids Pro - Agenda Completa</title>
+    <style>
+        :root {
+            /* Colores Exactos */
+            --bg-app: #F5F7FA;
+            --text-dark: #1F2937;
+            --text-grey: #6B7280;
+            --card-dark: #374E59; /* Teal Oscuro */
+            --btn-orange: #E07A5F; /* Naranja Coral */
+            --teal-icon: #374E59;
+            --white: #FFFFFF;
+            
+            /* Estados */
+            --status-done-bg: #ECFDF5; --status-done-txt: #059669;
+            --status-curr-bg: #FFF7ED; --status-curr-txt: #C2410C;
+            --status-pend-bg: #F3F4F6; --status-pend-txt: #6B7280;
+            
+            /* Sombras y Fuentes */
+            --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-app);
+            color: var(--text-dark);
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+
+        .app-container {
+            width: 100%;
+            padding-bottom: 80px;
+        }
+
+        /* --- 1. HEADER CON NUEVO LOGO --- */
+        header {
+            padding: 20px 24px 10px 24px;
+            background-color: var(--bg-app);
+            position: sticky; top: 0; z-index: 10;
+        }
+
+        .top-bar {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 24px;
+        }
+
+        /* NUEVOS ESTILOS PARA EL LOGO PROFESIONAL */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .brand-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -0.5px;
+            line-height: 1;
+        }
+
+        .brand-pro {
+            color: var(--btn-orange);
+            font-weight: 800;
+        }
+        
+        .user-actions { display: flex; align-items: center; gap: 12px; }
+        .avatar { width: 36px; height: 36px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .bell-btn { color: var(--text-grey); cursor: pointer; }
+
+        .greeting h1 { font-size: 28px; font-weight: 800; color: var(--text-dark); margin-bottom: 4px; }
+        .greeting p { font-size: 14px; color: var(--text-grey); font-weight: 500; }
+
+        /* --- 2. HERO CARD --- */
+        .hero-card {
+            background-color: var(--card-dark); color: white;
+            margin: 10px 24px 30px 24px; padding: 24px;
+            border-radius: 24px; box-shadow: 0 15px 30px -10px rgba(55, 78, 89, 0.5);
+            position: relative; overflow: hidden;
+        }
+        .hero-card::after {
+            content: ''; position: absolute; top: -50px; right: -50px;
+            width: 150px; height: 150px; background: rgba(255,255,255,0.05);
+            border-radius: 50%; pointer-events: none;
+        }
+        .hero-label { text-align: right; font-size: 13px; font-weight: 500; opacity: 0.9; margin-bottom: 20px; }
+        .hero-main { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+        .child-pic { 
+            width: 56px; height: 56px; background-color: #FFEDD5; 
+            border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 28px;
+        }
+        .hero-details .time { font-size: 14px; opacity: 0.8; margin-bottom: 4px; }
+        .hero-details .name { font-size: 18px; font-weight: 700; }
+        .btn-primary {
+            width: 100%; background-color: var(--btn-orange); color: white;
+            border: none; padding: 14px; border-radius: 14px;
+            font-size: 16px; font-weight: 600; cursor: pointer;
+            box-shadow: 0 4px 12px rgba(224, 122, 95, 0.4); transition: transform 0.2s;
+        }
+        .btn-primary:active { transform: scale(0.98); }
+
+        /* --- 3. CAROUSEL --- */
+        .section-title { padding: 0 24px; font-size: 16px; font-weight: 700; margin-bottom: 16px; color: var(--text-dark); }
+        .carousel-track {
+            display: flex; gap: 16px; overflow-x: auto; 
+            padding: 0 24px 30px 24px; scroll-snap-type: x mandatory;
+        }
+        .carousel-track::-webkit-scrollbar { display: none; }
+        .smart-card {
+            min-width: 240px; background: var(--white); border-radius: 20px;
+            padding: 20px; box-shadow: var(--shadow-card); scroll-snap-align: center;
+            display: flex; flex-direction: column; align-items: center; text-align: center;
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+        .sc-icon {
+            width: 44px; height: 44px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; margin-bottom: 12px; font-size: 20px;
+        }
+        .sc-icon.teal { background-color: var(--card-dark); color: white; }
+        .sc-icon.orange { background-color: var(--btn-orange); color: white; }
+        .smart-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .smart-card p { font-size: 12px; color: var(--text-grey); line-height: 1.4; }
+
+        /* --- 4. AGENDA COMPLETA --- */
+        .agenda-wrapper {
+            margin: 0 24px; background-color: var(--white);
+            border-radius: 24px; padding: 24px 20px; box-shadow: var(--shadow-card);
+        }
+        .agenda-list { display: flex; flex-direction: column; gap: 0; }
+        .agenda-item { display: flex; position: relative; padding-bottom: 30px; }
+        .agenda-item:last-child { padding-bottom: 0; }
+        .time-col {
+            width: 50px; font-size: 14px; font-weight: 700;
+            color: var(--text-dark); text-align: left; padding-top: 2px;
+        }
+        .timeline-col {
+            width: 20px; display: flex; flex-direction: column;
+            align-items: center; margin-right: 16px; position: relative;
+        }
+        .dot {
+            width: 12px; height: 12px; border-radius: 50%;
+            background-color: var(--card-dark); z-index: 2; flex-shrink: 0; margin-top: 4px;
+        }
+        .dot.hollow { background-color: white; border: 2px solid var(--text-grey); }
+        .line {
+            position: absolute; top: 16px; bottom: -4px;
+            width: 2px; background-color: #E5E7EB; z-index: 1;
+        }
+        .agenda-item:last-child .line { display: none; }
+        .appointment-info { flex: 1; padding-top: 0; }
+        .patient-name { font-size: 15px; font-weight: 600; color: var(--text-dark); margin-bottom: 2px; }
+        .therapy-type { font-size: 12px; color: var(--text-grey); display: block; margin-bottom: 6px;}
+        .status-badge {
+            display: inline-flex; align-items: center; gap: 4px;
+            padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 600;
+        }
+        .status-done { background-color: var(--status-done-bg); color: var(--status-done-txt); }
+        .status-current { background-color: var(--status-curr-bg); color: var(--status-curr-txt); }
+        .status-pending { background-color: var(--status-pend-bg); color: var(--status-pend-txt); }
+
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    
+    <header>
+        <div class="top-bar">
+            <div class="logo-container">
+                <svg class="logo-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.3333 12.6667C21.3333 14.5076 19.8409 16 18 16C16.1591 16 14.6667 14.5076 14.6667 12.6667C14.6667 10.8257 16.1591 9.33331 18 9.33331C19.8409 9.33331 21.3333 10.8257 21.3333 12.6667ZM17.3333 18.6666C14.3878 18.6666 12 21.0545 12 24H24C24 21.0545 21.6122 18.6666 18.6667 18.6666H17.3333Z" fill="var(--card-dark)"/>
+                    <path d="M14.6667 13.3333C14.6667 15.1743 13.1743 16.6667 11.3333 16.6667C9.49238 16.6667 8 15.1743 8 13.3333C8 11.4924 9.49238 10 11.3333 10C13.1743 10 14.6667 11.4924 14.6667 13.3333Z" fill="var(--btn-orange)"/>
+                    <path d="M16.6667 18.6667H15.3333C12.3878 18.6667 10 21.0545 10 24H11.3333C11.3333 21.7909 13.1242 20 15.3333 20H16.6667V18.6667Z" fill="var(--btn-orange)"/>
+                </svg>
+                
+                <span class="brand-text">SocialKids <span class="brand-pro">Pro</span></span>
+            </div>
+
+            <div class="user-actions">
+                <img src="https://i.pravatar.cc/150?u=a042581f4e29026024d" alt="User" class="avatar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="bell-btn">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                </svg>
+            </div>
+        </div>
+        <div class="greeting">
+            <h1>Hola, Cami 👋</h1>
+            <p>Viernes, 12 Dic</p>
+        </div>
+    </header>
+
+    <div class="hero-card">
+        <div class="hero-label">A continuación</div>
+        <div class="hero-main">
+            <div class="child-pic">👦🏻</div>
+            <div class="hero-details">
+                <div class="time">15:00 hrs</div>
+                <div class="name">Leo García</div>
+            </div>
+        </div>
+        <button class="btn-primary">Iniciar Sesión</button>
+    </div>
+
+    <h2 class="section-title">Asistente Diario</h2>
+    <div class="carousel-track">
+        <div class="smart-card">
+            <div class="sc-icon teal">✓</div>
+            <h3>Todo en orden ☀️</h3>
+            <p>Tus pacientes están al día con sus pagos esta semana.</p>
+        </div>
+        <div class="smart-card">
+            <div class="sc-icon orange">!</div>
+            <h3>Pago Pendiente ⚠️</h3>
+            <p>Mamá de Leo G. tiene 1 sesión sin pagar.</p>
+        </div>
+        <div class="smart-card">
+            <div class="sc-icon teal" style="background:#4B5563">📊</div>
+            <h3>Progreso Semanal</h3>
+            <p>15 / 20 Sesiones completadas exitosamente.</p>
+        </div>
+    </div>
+
+    <h2 class="section-title">Agenda de Hoy</h2>
+    <div class="agenda-wrapper">
+        <div class="agenda-list">
+            <div class="agenda-item">
+                <div class="time-col">10:00</div>
+                <div class="timeline-col"><div class="dot"></div><div class="line"></div></div>
+                <div class="appointment-info">
+                    <div class="patient-name">Ana P.</div>
+                    <span class="therapy-type">Evaluación Lenguaje</span>
+                    <span class="status-badge status-done">✓ Realizado</span>
+                </div>
+            </div>
+            <div class="agenda-item">
+                <div class="time-col">11:30</div>
+                <div class="timeline-col"><div class="dot"></div><div class="line"></div></div>
+                <div class="appointment-info">
+                    <div class="patient-name">Sofía M.</div>
+                    <span class="therapy-type">Terapia Miofuncional</span>
+                    <span class="status-badge status-done">✓ Realizado</span>
+                </div>
+            </div>
+            <div class="agenda-item">
+                <div class="time-col">15:00</div>
+                <div class="timeline-col"><div class="dot" style="background-color: var(--btn-orange); box-shadow: 0 0 0 3px #FED7AA;"></div><div class="line"></div></div>
+                <div class="appointment-info">
+                    <div class="patient-name">Leo García</div>
+                    <span class="therapy-type">Trastorno Sonido Habla</span>
+                    <span class="status-badge status-current">En Curso</span>
+                </div>
+            </div>
+            <div class="agenda-item">
+                <div class="time-col">16:30</div>
+                <div class="timeline-col"><div class="dot hollow"></div><div class="line"></div></div>
+                <div class="appointment-info">
+                    <div class="patient-name">Martín L.</div>
+                    <span class="therapy-type">Primera Consulta</span>
+                    <span class="status-badge status-pending">Pendiente</span>
+                </div>
+            </div>
+            <div class="agenda-item">
+                <div class="time-col">17:45</div>
+                <div class="timeline-col"><div class="dot hollow"></div></div>
+                <div class="appointment-info">
+                    <div class="patient-name">Taller Grupal</div>
+                    <span class="therapy-type">Habilidades Sociales</span>
+                    <span class="status-badge status-pending">Pendiente</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

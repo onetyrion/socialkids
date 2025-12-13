@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialKids | Gestión Clínica para Terapeutas Infantiles</title>
+    <meta name="description"
+        content="El primer software para fonoaudiólogos y terapeutas que conecta con las familias. Gestión, tests automáticos y reportes por WhatsApp.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* --- VARIABLES & RESET (Sin cambios) --- */
+        :root {
+            --primary: #3B82F6;
+            /* Royal Blue */
+            --primary-dark: #2563EB;
+            --secondary: #4ADE80;
+            /* Soft Green */
+            --accent: #F472B6;
+            /* Pink Pastel */
+            --dark: #0F172A;
+            --gray: #64748B;
+            --light: #F8FAFC;
+            --white: #FFFFFF;
+            --glass: rgba(255, 255, 255, 0.85);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Nunito', sans-serif;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- UTILITIES (Sin cambios) --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--light);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .badge {
+            background: #DBEAFE;
+            color: var(--primary-dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- ANIMATIONS (Sin cambios) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            }
+
+            50% {
+                transform: translateY(-20px);
+                box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.3);
+            }
+
+            100% {
+                transform: translateY(0px);
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        /* --- NAVBAR (Sin cambios) --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 16px 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            font-weight: 500;
+            color: var(--gray);
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        @media(max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding-top: 160px;
+            padding-bottom: 100px;
+            background: radial-gradient(circle at 50% 0%, #EFF6FF 0%, #F8FAFC 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin: 24px 0;
+            color: var(--dark);
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 40px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+        }
+
+        /* --- NEW IMAGE PHONE MOCKUP --- */
+        .phone-container {
+            position: relative;
+            width: 320px;
+            /* Ancho típico de iPhone */
+            height: 650px;
+            /* Alto típico */
+            margin: 0 auto;
+            /* El borde actúa como el bisel del teléfono */
+            border: 14px solid #111;
+            border-radius: 55px;
+            /* Redondeo pronunciado */
+            background: #111;
+            /* Sombra fuerte para dar profundidad */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            /* La animación flotante se aplica al contenedor completo */
+            animation: float 6s ease-in-out infinite;
+            /* Importante: oculta las esquinas de la imagen que sobresalen */
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .phone-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Asegura que la imagen cubra todo el espacio sin deformarse */
+            display: block;
+            border-radius: 42px;
+            /* Un poco menos que el contenedor para que encaje dentro del borde */
+            background-color: #fff;
+            /* Fondo blanco por si la imagen tarda en cargar */
+        }
+
+        /* --- FEATURES SECTION (Sin cambios) --- */
+        .features {
+            background: white;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            padding: 32px;
+            border-radius: var(--radius);
+            background: var(--light);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: #EFF6FF;
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* --- PRICING SECTION (Sin cambios) --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .price-card {
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 24px;
+            padding: 40px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-card.pro {
+            border: 2px solid var(--primary);
+            box-shadow: var(--shadow-lg);
+            transform: scale(1.05);
+            z-index: 2;
+        }
+
+        .price-amount {
+            font-size: 3rem;
+            font-weight: 800;
+            font-family: 'Nunito';
+            color: var(--dark);
+            margin: 20px 0;
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .check-list li {
+            margin-bottom: 12px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            color: var(--gray);
+        }
+
+        .check-icon {
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* --- FOOTER (Sin cambios) --- */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            font-family: 'Nunito';
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 40px;
+            opacity: 0.7;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.4;
+        }
+
+        /* --- MEDIA QUERIES --- */
+        @media(max-width: 960px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-ctas {
+                justify-content: center;
+            }
+
+            /* Ajuste para que el celular no sea gigante en móviles */
+            .phone-container {
+                width: 280px;
+                height: 560px;
+                margin-top: 20px;
+                border-width: 10px;
+            }
+
+            .price-card.pro {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <span style="font-size: 1.8rem;">🧸</span> SocialKids
+            </a>
+            <div class="nav-links">
+                <a href="#features">Características</a>
+                <a href="#pricing">Precios</a>
+                <a href="#faq">Preguntas</a>
+                <a href="#" style="color: var(--primary); font-weight: 700;">Ingresar</a>
+                <a href="#" class="btn btn-primary" style="padding: 8px 20px;">Crear Cuenta Gratis</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text reveal">
+                <span class="badge">Nuevo en Chile 🇨🇱</span>
+                <h1>Menos papeleo, <br><span class="text-gradient">más conexión.</span></h1>
+                <p>El primer sistema de gestión clínica diseñado para terapeutas infantiles. Envía avances por WhatsApp,
+                    calcula tests y olvida el caos administrativo.</p>
+                <div class="hero-ctas">
+                    <a href="#" class="btn btn-primary">Empezar Gratis</a>
+                    <a href="#features" class="btn btn-secondary">Cómo funciona</a>
+                </div>
+                <div
+                    style="margin-top: 30px; display: flex; align-items: center; gap: 10px; color: var(--gray); font-size: 0.9rem;">
+                    <div style="display: flex;">
+                        <div
+                            style="width:30px; height:30px; background:#ddd; border-radius:50%; border:2px solid white;">
+                        </div>
+                        <div
+                            style="width:30px; height:30px; background:#ccc; border-radius:50%; border:2px solid white; margin-left:-10px;">
+                        </div>
+                        <div
+                            style="width:30px; height:30px; background:#bbb; border-radius:50%; border:2px solid white; margin-left:-10px;">
+                        </div>
+                    </div>
+                    <p>Usado por +100 Terapeutas</p>
+                </div>
+            </div>
+
+            <div class="phone-container">
+                <iframe src="app.html" class="phone-iframe" style="
+    height: -webkit-fill-available;
+" title="Demo App"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section-padding features">
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;" class="reveal">
+                <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Todo lo que tu consulta necesita</h2>
+                <p style="color: var(--gray);">Olvídate de Excel, Word y los papeles perdidos. Centraliza tu práctica
+                    clínica.</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card reveal">
+                    <div class="icon-box">📊</div>
+                    <h3>Calculadora de Tests</h3>
+                    <p style="margin-top: 10px; color: var(--gray); font-size: 0.95rem;">
+                        Ingresa puntajes brutos (STSG, TEPROSIF) y obtén diagnósticos y percentiles automáticos. No más
+                        cálculos manuales.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="icon-box">💬</div>
+                    <h3>Reportes WhatsApp</h3>
+                    <p style="margin-top: 10px; color: var(--gray); font-size: 0.95rem;">
+                        Envía un resumen profesional con foto y tarea al celular de los padres en 1 clic. Fideliza a las
+                        familias.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="icon-box">🗂️</div>
+                    <h3>Ficha Clínica Digital</h3>
+                    <p style="margin-top: 10px; color: var(--gray); font-size: 0.95rem;">
+                        Historial de sesiones, anamnesis y documentos seguros en la nube. Accede desde tu celular o
+                        tablet.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section-padding" style="background: #F1F5F9;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;" class="reveal">
+                <h2 style="font-size: 2.5rem;">Precios simples</h2>
+                <p>Empieza gratis. Crece cuando lo necesites.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="price-card reveal">
+                    <h3>Plan Semilla</h3>
+                    <div class="price-amount">$0 <span class="price-period">/mes</span></div>
+                    <p style="color: var(--gray); margin-bottom: 24px;">Perfecto para empezar tu cartera.</p>
+                    <a href="#" class="btn btn-secondary" style="width: 100%; margin-bottom: 24px;">Crear Cuenta
+                        Gratis</a>
+                    <ul class="check-list">
+                        <li><span class="check-icon">✓</span> Hasta 3 Pacientes Activos</li>
+                        <li><span class="check-icon">✓</span> 10 Sesiones al mes</li>
+                        <li><span class="check-icon">✓</span> Ficha Clínica Básica</li>
+                        <li><span class="check-icon">✓</span> Reportes por WhatsApp</li>
+                    </ul>
+                </div>
+
+                <div class="price-card pro reveal">
+                    <div
+                        style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">
+                        RECOMENDADO</div>
+                    <h3>Plan Consulta</h3>
+                    <div class="price-amount">$14.990 <span class="price-period">/mes</span></div>
+                    <p style="color: var(--gray); margin-bottom: 24px;">Para profesionales activos.</p>
+                    <a href="#" class="btn btn-primary" style="width: 100%; margin-bottom: 24px;">Empezar Prueba
+                        Gratis</a>
+                    <ul class="check-list">
+                        <li><span class="check-icon">✓</span> <strong>Pacientes Ilimitados</strong></li>
+                        <li><span class="check-icon">✓</span> Sesiones Ilimitadas</li>
+                        <li><span class="check-icon">✓</span> <strong>Calculadora de Tests Automática</strong></li>
+                        <li><span class="check-icon">✓</span> Fotos ilimitadas</li>
+                        <li><span class="check-icon">✓</span> Soporte Prioritario</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <span class="footer-logo">🧸 SocialKids</span>
+            <div class="footer-links">
+                <a href="#">Términos y Condiciones</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Contacto</a>
+            </div>
+            <p class="copyright">© 2025 SocialKids Chile. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        // Trigger once on load
+        reveal();
+    </script>
+</body>
+
+</html>
