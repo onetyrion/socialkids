@@ -6,7 +6,6 @@ import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
 // import GroupFooterNav from "../blocks/GroupFooterNav.astro";
 // import FooterNav from "../shared/FooterNav.astro";
-
 ---
 
 <div class="mt-16"></div>
@@ -53,7 +52,11 @@ import Paragraph from "../shared/Paragraph.astro";
         class="col-span-2 lg:col-span-1 h-auto flex flex-col sm:items-center"
       >
         <div class="h-full">
-          <a href="#" id="up-button" class="relative flex items-center gap-3 justify-center">
+          <a
+            href="#"
+            id="up-button"
+            class="relative flex items-center gap-3 justify-center"
+          >
             <img src="/logos/lafono-logo.svg" alt="logo" class="h-60 lg:ml-8" />
           </a>
         </div>
@@ -94,10 +97,15 @@ import Paragraph from "../shared/Paragraph.astro";
     <div class="bg-gradient-to-tl from-box-bg py-2 relative mt-6">
       <Container>
         <div
-          class="flex justify-center items-center gap-6 md:text-lg text-heading-3"
+          class="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-6 md:text-lg text-heading-3"
         >
           <div>
             &copy; <span id="year"></span> SocialKids. Todos los derechos reservados
+          </div>
+          <div class="text-sm">
+            <a href="/terminos" class="hover:text-primary transition-colors"
+              >Términos y Condiciones de Uso</a
+            >
           </div>
         </div>
       </Container>

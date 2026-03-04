@@ -1,0 +1,112 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/shared/Container.astro";
+import { settings } from "../data/settings";
+---
+
+<Layout
+    title={`Términos y Condiciones - ${settings.title}`}
+    description="Términos y condiciones de uso y política de privacidad."
+>
+    <main
+        class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden mt-32 mb-32"
+    >
+        <Container>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-bold text-heading-1 mb-8">
+                    Términos y Condiciones de Uso
+                </h1>
+
+                <div class="prose prose-lg dark:prose-invert text-heading-3">
+                    <p class="mb-4">
+                        Bienvenido/a a {settings.title}. Al acceder y utilizar
+                        este sitio web, aceptas cumplir con los siguientes
+                        términos y condiciones de uso. Si no estás de acuerdo
+                        con alguna parte de estos términos, te rogamos que no
+                        utilices nuestro sitio web.
+                    </p>
+
+                    <h2 class="text-2xl font-semibold text-heading-1 mt-8 mb-4">
+                        Uso de la información y Privacidad
+                    </h2>
+                    <p class="mb-4">
+                        La información proporcionada en este sitio web tiene
+                        fines informativos. Nos comprometemos a proteger tu
+                        privacidad y los datos personales que nos proporciones a
+                        través de formularios de contacto o reservas.
+                    </p>
+
+                    <h2 class="text-2xl font-semibold text-heading-1 mt-8 mb-4">
+                        Uso de Google Analytics y Cookies
+                    </h2>
+                    <p class="mb-4">
+                        Este sitio web utiliza Google Analytics, un servicio de
+                        análisis web prestado por Google, Inc. ("Google").
+                        Google Analytics utiliza "cookies", que son archivos de
+                        texto ubicados en tu ordenador, para ayudar al sitio web
+                        a analizar el uso que hacen los usuarios del sitio web.
+                    </p>
+                    <p class="mb-4">
+                        La información que genera la cookie acerca de tu uso del
+                        sitio web (incluyendo tu dirección IP) será directamente
+                        transmitida y archivada por Google en los servidores de
+                        Estados Unidos. Google usará esta información por cuenta
+                        nuestra con el propósito de seguir la pista de tu uso
+                        del sitio web, recopilando informes de la actividad del
+                        sitio web y prestando otros servicios relacionados con
+                        la actividad del sitio web y el uso de Internet.
+                    </p>
+                    <p class="mb-4">
+                        Puedes rechazar el tratamiento de los datos o la
+                        información rechazando el uso de cookies mediante la
+                        selección de la configuración apropiada de tu navegador.
+                        Sin embargo, debes saber que si lo haces, puede que no
+                        puedas usar la plena funcionabilidad de este sitio web.
+                        Al utilizar este sitio web, consientes el tratamiento de
+                        información acerca de ti por Google en la forma y para
+                        los fines arriba indicados.
+                    </p>
+
+                    <h2 class="text-2xl font-semibold text-heading-1 mt-8 mb-4">
+                        Propiedad Intelectual
+                    </h2>
+                    <p class="mb-4">
+                        Todo el contenido incluido en este sitio web, como
+                        textos, gráficos, logotipos, imágenes y software, es
+                        propiedad de {settings.title} o de sus proveedores de contenido
+                        y está protegido por las leyes de propiedad intelectual.
+                    </p>
+
+                    <h2 class="text-2xl font-semibold text-heading-1 mt-8 mb-4">
+                        Limitación de Responsabilidad
+                    </h2>
+                    <p class="mb-4">
+                        {settings.title} no se hace responsable de los daños y perjuicios
+                        derivados del uso de este sitio web o de la información contenida
+                        en él.
+                    </p>
+
+                    <h2 class="text-2xl font-semibold text-heading-1 mt-8 mb-4">
+                        Modificaciones
+                    </h2>
+                    <p class="mb-4">
+                        Nos reservamos el derecho de modificar estos términos y
+                        condiciones en cualquier momento. Las modificaciones
+                        entrarán en vigor inmediatamente después de su
+                        publicación en el sitio web.
+                    </p>
+
+                    <p class="mt-8 text-sm">
+                        Última actualización: {
+                            new Date().toLocaleDateString("es-CL", {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
+                            })
+                        }
+                    </p>
+                </div>
+            </div>
+        </Container>
+    </main>
+</Layout>
