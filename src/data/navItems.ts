@@ -19,4 +19,10 @@ export const navItems = [
     id: "cta-nav",
     text: "Sobre mí",
   },
+  {
+    href: "/pro",
+    id: "socialkids-pro",
+    text: "SocialKids Pro",
+    badge: "Nuevo"
+  }
 ];
