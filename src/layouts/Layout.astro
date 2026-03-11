@@ -28,6 +28,15 @@ const image = new URL(Astro.props.image || "", Astro.site);
       gtag('config', 'AW-16510693047');
     </script>
 
+    <script>
+      window.gtag = window.gtag || function() {
+        if (window.zaraz) {
+          // Redirige lo que iba a gtag hacia zaraz
+          zaraz.track(arguments[1], arguments[2]);
+        }
+      };
+    </script>
+
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
