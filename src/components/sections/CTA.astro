@@ -40,30 +40,62 @@ import Paragraph from "../shared/Paragraph.astro";
           ></span>
         </div>
       </div>
-      <div class="mx-auto text-center max-w-xl md:max-w-2xl relative">
+
+      <div class="mx-auto text-center max-w-3xl relative">
         <h2
           class="text-3xl/tight sm:text-4xl/tight md:text-5xl/tight
           font-bold text-heading-1"
         >
           <span
             class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-20% via-primary via-30% to-green-600"
-            >Sobre mí</span
+            >¿Dónde atendemos?</span
           >
         </h2>
-        <Paragraph className={"pt-10 mb-5"}>
-          Responsable, creativa, dinámica, carismática, con trato afable hacia
-          compañeros, usuarios y sus familias. Capaz de mantener actitud
-          positiva ante adversidades, actuando con proactividad y de manera
-          interdisciplinaria. Apta para trabajar bajo un modelo biopsicosocial
-          con dualidad y seguridad en usuarios y sus familias. Versátil, con
-          interés en un constante perfeccionamiento.
+        <Paragraph className={"pt-6 mb-8"}>
+          Ofrecemos terapias fonoaudiológicas especializadas para niños en dos ciudades.
+          Selecciona tu ciudad para más información.
         </Paragraph>
-        <!-- <div class="mx-auto max-w-md sm:max-w-xl pt-10">
-          <Button variant={"primary"}>
-            <span class="text-white relative z-[5]">Get In Touch</span>
-          </Button>
-        </div> -->
+
+        <!-- City cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-4 text-left">
+          <!-- Puerto Varas card -->
+          <a
+            href="/fonoaudiologa-puerto-varas"
+            id="city-card-puerto-varas"
+            class="group relative bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md border border-box-border hover:border-primary hover:shadow-lg transition-all duration-300"
+          >
+            <div class="flex items-start gap-4">
+              <div class="text-3xl">🏔️</div>
+              <div>
+                <h3 class="font-bold text-lg text-heading-1 group-hover:text-primary transition-colors">Puerto Varas</h3>
+                <p class="text-sm text-heading-3 mt-1">Terapia <strong>a domicilio</strong> en Puerto Varas, Puerto Montt, Frutillar, Llanquihue y alrededores.</p>
+              </div>
+            </div>
+            <div class="mt-4 text-sm font-semibold text-primary flex items-center gap-1">
+              Ver más <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </a>
+
+          <!-- Santiago card -->
+          <a
+            href="/fonoaudiologa-santiago"
+            id="city-card-santiago"
+            class="group relative bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md border border-box-border hover:border-primary hover:shadow-lg transition-all duration-300"
+          >
+            <div class="flex items-start gap-4">
+              <div class="text-3xl">🏙️</div>
+              <div>
+                <h3 class="font-bold text-lg text-heading-1 group-hover:text-primary transition-colors">Santiago</h3>
+                <p class="text-sm text-heading-3 mt-1">Terapia <strong>a domicilio</strong> para niños en Santiago y toda la Región Metropolitana.</p>
+              </div>
+            </div>
+            <div class="mt-4 text-sm font-semibold text-primary flex items-center gap-1">
+              Ver más <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </Container>
 </section>
+

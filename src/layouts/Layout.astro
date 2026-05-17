@@ -89,6 +89,72 @@ const image = new URL(Astro.props.image || "", Astro.site);
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Slot para schemas adicionales por página -->
+    <slot name="head" />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://socialkids.cl/#francisca",
+          "name": "Francisca Veloso Vega",
+          "jobTitle": "Fonoaudióloga",
+          "description": "Fonoaudióloga especializada en trastornos del lenguaje, habla y voz en niños. Atención a domicilio en Puerto Varas y online para Santiago y todo Chile.",
+          "url": "https://socialkids.cl",
+          "telephone": "+56979627693",
+          "email": "contacto@socialkids.cl",
+          "sameAs": [
+            "https://www.doctoralia.cl/francisca-veloso-vega/fonoaudiologo/puerto-varas",
+            "https://www.instagram.com/lafonosocialkids"
+          ],
+          "areaServed": [
+            { "@type": "City", "name": "Puerto Varas" },
+            { "@type": "City", "name": "Puerto Montt" },
+            { "@type": "City", "name": "Frutillar" },
+            { "@type": "City", "name": "Llanquihue" },
+            { "@type": "City", "name": "Santiago" }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Terapias Fonoaudiológicas",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Terapia de Lenguaje" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Terapia de Habla" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Evaluación Fonoaudiológica" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Terapia para Autismo y TEA" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Terapia para Síndrome de Down" } }
+            ]
+          }
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://socialkids.cl/#business",
+          "name": "SocialKids - Fonoaudiología Infantil",
+          "url": "https://socialkids.cl",
+          "telephone": "+56979627693",
+          "email": "contacto@socialkids.cl",
+          "description": "Fonoaudiología infantil a domicilio en Puerto Varas y online para Santiago y todo Chile.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Puerto Varas",
+            "addressRegion": "Los Lagos",
+            "addressCountry": "CL"
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Puerto Varas" },
+            { "@type": "City", "name": "Puerto Montt" },
+            { "@type": "City", "name": "Santiago" }
+          ],
+          "employee": { "@id": "https://socialkids.cl/#francisca" },
+          "priceRange": "$$",
+          "currenciesAccepted": "CLP",
+          "paymentAccepted": "Transferencia, Efectivo",
+          "openingHours": "Mo-Fr 09:00-19:00"
+        }
+      ]
+    })} />
   </head>
   <body class="overflow-hidden overflow-y-auto bg-body">
     <!-- Google Tag Manager (noscript) -->

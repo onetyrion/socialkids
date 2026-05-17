@@ -1,6 +1,6 @@
 export const settings = {
     site: 'https://socialkids.cl',
     name: 'lafonosocialkids',
-    title: 'SocialKids | Fonoaudiología a domicilio en Puerto Varas y alrededores',
-    description: 'SocialKids | Terapias fonoaudiológicas a domicilio en Puerto Varas para niños con trastornos de lenguaje, habla y voz, incluyendo autismo, síndrome de Down y otras patologías.',
+    title: 'SocialKids | Fonoaudióloga para Niños en Puerto Varas y Santiago',
+    description: 'Francisca Veloso, fonoaudióloga especializada en niños. Atención a domicilio en Puerto Varas y Santiago. Trastornos de lenguaje, habla, voz, autismo y síndrome de Down.',
   }
